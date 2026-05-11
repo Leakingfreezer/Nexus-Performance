@@ -125,3 +125,31 @@ SELECT
 FROM clean_hevy h
 JOIN exercise_muscle_map m 
     ON h.exercise_name = m.exercise_name
+
+--Creating Athlete fingerprint
+--Create a general outline and fill in information from different charts to create maps of each data type for analytics
+CREATE TABLE athlete_profile (
+    profile_type text,
+    category text, 
+    total_sets INTEGER, 
+    total_reps INTEGER, 
+    total_volume REAL, 
+    training_day_week INTEGER, 
+    last_trained_date text
+);
+
+--Leaderboard outline/structure
+-- Insert values into these columns
+INSERT INTO athlete_profile (
+    profile_type,
+    category, 
+    total_sets, 
+    total_reps, 
+    total_volume, 
+    training_day_week, 
+    last_trained_date
+
+    'exercise' AS profile_type --Labels every row in profile_type as exercise, data type
+    exercise_name AS category 
+    COUNT(*) AS total_sets 
+)
